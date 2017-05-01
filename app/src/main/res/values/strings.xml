@@ -1,0 +1,45 @@
+<resources>
+    <string-array name="titles">
+        <item>照片</item>
+        <item>联系人</item>
+        <item>文档</item>
+    </string-array>
+
+    <string name="app_name">IS</string>
+    <string name="sync_setting">设置</string>
+    <string name="file_list">文件</string>
+    <string name="contract">联系人</string>
+    <string name="sms">短信</string>
+    <string name="photo">照片</string>
+
+    <string name="sync_time">同步周期</string>
+    <string-array name="Time">
+        <item>从不</item>
+        <item>一天</item>
+        <item>三天</item>
+        <item>七天</item>
+        <item>每月</item>
+    </string-array>
+
+    <string name="sync_option">同步选项</string>
+    <string name="file_encrypt">加密文件</string>
+    <string name="sync_content">同步内容</string>
+    <string name="find_phone">查找我的手机</string>
+    <string name="send_last_position">发送手机最后位置</string>
+    <string name="pic_lock">图形锁定</string>
+    <string name="pic_lock_setting">设置解锁图案</string>
+    <string name="setting">设置</string>
+    <string name="skip_button_label">Skip</string>
+    <string name="next_button_label">Next</string>
+    <string name="back_button_label">Back</string>
+    <string-array name="sync_options">
+        <item>本地云端合并去重</item>
+        <item>本地覆盖云端</item>
+        <item>云端覆盖本地</item>
+    </string-array>
+    <string-array name="sync_options_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>\
+</resources>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff">
+
+
+    <com.gigamole.library.navigationtabstrip.NavigationTabStrip
+        android:id="@+id/tab"
+        android:elevation="8dp"
+        app:nts_size="16dp"
+        android:layout_margin="3dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:nts_titles="@array/titles"
+        app:nts_color="@color/colorPrimary"
+        app:nts_type="point"
+        app:paddingEnd="@dimen/fab_labels_margin"
+        app:nts_gravity="bottom"
+        app:nts_corners_radius="@dimen/actionbar_depth"
+        app:nts_active_color="@color/colorAccent"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#fff">
+        </android.support.v4.view.ViewPager>
+
+
+        <com.getbase.floatingactionbutton.FloatingActionsMenu
+            android:id="@+id/multiple_actions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginEnd="16dp"
+            fab:fab_labelStyle="@style/menu_labels_style"
+            app:theme="@style/AppTheme">
+
+            <com.getbase.floatingactionbutton.FloatingActionButton
+                android:id="@+id/add_media"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                fab:fab_title="@string/select_photo_text"
+                app:theme="@style/AppTheme"
+                app:fab_stroke_visible="false"
+                fab:fab_icon="@drawable/ic_media"
+                />
+
+            <com.getbase.floatingactionbutton.FloatingActionButton
+                android:id="@+id/add_doc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                fab:fab_icon="@drawable/ic_doc"
+                fab:fab_title="@string/select_doc_text"
+                />
+
+        </com.getbase.floatingactionbutton.FloatingActionsMenu>
+    </RelativeLayout>
+
+
+</LinearLayout>
