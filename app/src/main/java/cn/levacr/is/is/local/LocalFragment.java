@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 
 import com.getbase.floatingactionbutton.FloatingActionButton;
 import com.gigamole.library.navigationtabstrip.NavigationTabStrip;
+import com.isnc.facesdk.SuperID;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,7 +44,6 @@ public class LocalFragment extends BaseFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.local_frag,container,false);
-
         navigationTabStrip = (NavigationTabStrip) root.findViewById(R.id.tab);
         viewPager = (ViewPager) root.findViewById(R.id.viewpager);
         initTab();

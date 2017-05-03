@@ -11,6 +11,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
 
+import com.isnc.facesdk.SuperID;
+
 import cn.levacr.is.is.local.LocalFragment;
 import cn.levacr.is.is.pref.PrefFragment;
 import cn.levacr.is.is.util.ActivityUtils;

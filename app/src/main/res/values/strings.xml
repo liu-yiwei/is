@@ -32,6 +32,9 @@
     <string name="skip_button_label">Skip</string>
     <string name="next_button_label">Next</string>
     <string name="back_button_label">Back</string>
+    <string name="identity">验证身份</string>
+    <string name="face">刷脸</string>
+    <string name="login">登录</string>
     <string-array name="sync_options">
         <item>本地云端合并去重</item>
         <item>本地覆盖云端</item>
