@@ -1,47 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android">
-        <SwitchPreference
-            android:defaultValue="false"
-            android:scrollbarStyle="insideInset"
-            android:icon="@drawable/ic_contract"
-            android:key="contract_key"
-            android:persistent="true"
-            android:title="@string/contract"
-            android:divider="@null"
-            />
-        <SwitchPreference
+    <SwitchPreference
+        android:defaultValue="false"
+        android:divider="@null"
+        android:icon="@drawable/ic_contract"
+        android:key="contract_key"
+        android:persistent="true"
+        android:scrollbarStyle="insideInset"
+        android:title="@string/contract"
+        />
+    <SwitchPreference
 
-            android:divider="@null"
-            android:key="sms_key"
-            android:visibility="invisible"
-            android:icon="@drawable/ic_sms"
-            android:persistent="true"
-            android:title="@string/sms"
-            />
-        <SwitchPreference
+        android:divider="@null"
+        android:icon="@drawable/ic_sms"
+        android:key="sms_key"
+        android:persistent="true"
+        android:title="@string/sms"
+        android:visibility="invisible"
+        />
+    <SwitchPreference
             android:key="photo_key"
             android:title="@string/photo"
             android:icon="@drawable/ic_photo"
             android:persistent="true"
             android:defaultValue="false"
             />
-        <SwitchPreference
-            android:key="file_key"
-            android:title="@string/file_encrypt"
-            android:icon="@drawable/ic_file_encrypt"
-            android:persistent="true"
-            android:visibility="invisible"
-            android:defaultValue="false"
-            />
-
-    <!--选择要同步的内容-->
-
-    <!--同步的设置-->
+    <SwitchPreference
+        android:key="file_key"
+        android:title="@string/file_encrypt"
+        android:icon="@drawable/ic_file_encrypt"
+        android:persistent="true"
+        android:visibility="invisible"
+        android:defaultValue="false"
+        />
     <ListPreference
 
+        android:key="id"
         android:title="@string/sync_time"
         android:dialogTitle="@string/sync_time"
+        android:persistent="true"
         android:entries="@array/Time"
         android:entryValues="@array/Time"
         android:icon="@drawable/ic_time"
@@ -49,35 +47,24 @@
     <ListPreference
 
         android:title="@string/sync_option"
-
+        android:key="op"
         android:dialogTitle="@string/sync_option"
+        android:persistent="true"
         android:entries="@array/sync_options"
         android:entryValues="@array/sync_options_values"
         android:icon="@drawable/ic_sync_option"
         />
     <SwitchPreference
-        android:title="@string/find_phone"
+        android:defaultValue="false"
         android:icon="@drawable/ic_find_phone"
-        android:defaultValue="false"
-        />
+        android:persistent="true"
+        android:title="@string/find_phone"/>
     <SwitchPreference
-        android:title="@string/send_last_position"
+        android:defaultValue="false"
         android:icon="@drawable/ic_send_last_position"
-        android:defaultValue="false"
+        android:persistent="true"
 
-        />
-
-    <SwitchPreference
-        android:key="@string/pic_lock"
-        android:title="@string/pic_lock"
-        android:icon="@drawable/ic_pic_lock"
-        android:defaultValue="false"
-        />
-    <Preference
-        android:title="@string/pic_lock_setting"
-        android:icon="@drawable/ic_pic_lock_setting"
-        android:dependency="@string/pic_lock"
-        />
+        android:title="@string/send_last_position"/>
 
 </PreferenceScreen>
 

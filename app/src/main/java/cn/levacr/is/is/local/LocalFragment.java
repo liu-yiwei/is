@@ -12,7 +12,6 @@ import android.view.ViewGroup;
 
 import com.getbase.floatingactionbutton.FloatingActionButton;
 import com.gigamole.library.navigationtabstrip.NavigationTabStrip;
-import com.isnc.facesdk.SuperID;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,6 +19,7 @@ import java.util.List;
 
 
 import cn.levacr.is.is.R;
+import cn.levacr.is.is.local.photo.PhotoFragment;
 import droidninja.filepicker.fragments.BaseFragment;
 import permissions.dispatcher.RuntimePermissions;
 
@@ -43,7 +43,7 @@ public class LocalFragment extends BaseFragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.local_frag,container,false);
+        View root = inflater.inflate(R.layout.frag_local,container,false);
         navigationTabStrip = (NavigationTabStrip) root.findViewById(R.id.tab);
         viewPager = (ViewPager) root.findViewById(R.id.viewpager);
         initTab();

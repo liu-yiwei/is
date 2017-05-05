@@ -1,4 +1,4 @@
-package cn.levacr.is.is.local;
+package cn.levacr.is.is.local.photo;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
