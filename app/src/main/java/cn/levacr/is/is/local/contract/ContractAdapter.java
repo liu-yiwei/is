@@ -10,7 +10,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import cn.levacr.is.is.R;
-import cn.levacr.is.is.data.Data;
+import cn.levacr.is.is.data.Contract;
 
 /**
  * Created by hello on 2017/5/6.
@@ -18,10 +18,10 @@ import cn.levacr.is.is.data.Data;
 
 public class ContractAdapter extends BaseAdapter {
 
-    private List<Data.Contract> mList;
+    private List<Contract> mList;
     private Context mContext;
 
-    public ContractAdapter(List<Data.Contract> list, Context context) {
+    public ContractAdapter(List<Contract> list, Context context) {
         this.mList = list;
         this.mContext = context;
     }
@@ -32,7 +32,7 @@ public class ContractAdapter extends BaseAdapter {
     }
 
     @Override
-    public Data.Contract getItem(int position) {
+    public Contract getItem(int position) {
         return mList.get(position);
     }
 

@@ -2,11 +2,8 @@ package cn.levacr.is.is.login;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.media.tv.TvContract;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -17,7 +14,7 @@ import com.isnc.facesdk.common.SDKConfig;
 
 import cn.levacr.is.is.MainActivity;
 import cn.levacr.is.is.R;
-import cn.levacr.is.is.util.EncrUtils;
+import cn.levacr.is.is.util.Md5Util;
 
 /**
  * Created by hello on 2017/5/3.
@@ -105,7 +102,7 @@ public class LoginActivity extends Activity {
     }
     
     private String getMd5FromUser(String password){
-        return EncrUtils.md5(password);
+        return Md5Util.md5(password);
     }
 }
 
