@@ -31,7 +31,7 @@ public class EncrContract extends Service {
         Data.Contract contract;
 
         Cursor cr = context.getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
-                new String[]{"display_name", "sort_key", "contact_id", "data1"}, null, null, "sort_key");
+                new String[]{"display_name", "data1"}, null, null, null);
         if (cr != null) {
             while (cr.moveToNext()) {
                 contract = new Data.Contract();

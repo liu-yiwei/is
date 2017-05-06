@@ -22,7 +22,8 @@ public class ContractAdapter extends BaseAdapter {
     private Context mContext;
 
     public ContractAdapter(List<Data.Contract> list, Context context) {
-
+        this.mList = list;
+        this.mContext = context;
     }
 
     @Override
@@ -42,7 +43,6 @@ public class ContractAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-
         if (convertView == null) {
             ViewHolder viewHolder = new ViewHolder();
             LayoutInflater inflater = LayoutInflater.from(mContext);
@@ -52,7 +52,7 @@ public class ContractAdapter extends BaseAdapter {
             viewHolder.name.setText(mList.get(position).getmName());
             viewHolder.number.setText(mList.get(position).getmPhoneNum());
         }
-        return null;
+        return convertView;
     }
 
     public class ViewHolder {

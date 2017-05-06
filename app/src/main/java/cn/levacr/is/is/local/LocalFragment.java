@@ -1,5 +1,7 @@
 package cn.levacr.is.is.local;
 
+import android.app.Instrumentation;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -19,6 +21,7 @@ import java.util.List;
 
 
 import cn.levacr.is.is.R;
+import cn.levacr.is.is.local.contract.ContractFragment;
 import cn.levacr.is.is.local.photo.PhotoFragment;
 import droidninja.filepicker.fragments.BaseFragment;
 import permissions.dispatcher.RuntimePermissions;
@@ -33,9 +36,8 @@ public class LocalFragment extends BaseFragment {
     private ArrayList<String> photoPaths = new ArrayList<>();
     private ArrayList<String> docPaths = new ArrayList<>();
 
-
-    FloatingActionButton addDoc;
-
+    private FloatingActionButton but_addDoc;
+    private FloatingActionButton but_addMedia;
 
     NavigationTabStrip navigationTabStrip;
     ViewPager viewPager;
@@ -48,11 +50,30 @@ public class LocalFragment extends BaseFragment {
         viewPager = (ViewPager) root.findViewById(R.id.viewpager);
         initTab();
 
+        but_addDoc = (FloatingActionButton) root.findViewById(R.id.add_doc);
+        but_addMedia = (FloatingActionButton) root.findViewById(R.id.add_media);
 
+        but_addDoc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+            }
+        });
+        but_addMedia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
         return root;
     }
 
+
+    //返回的文件列表;
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+    }
 
     //初始化tab
     void initTab(){
@@ -76,7 +97,7 @@ public class LocalFragment extends BaseFragment {
         List<Fragment> x = new ArrayList<>();
         x.add(new PhotoFragment());
         x.add(new PhotoFragment());
-        x.add(new PhotoFragment());
+        x.add(new ContractFragment());
         viewPager.setAdapter(new  ViewPagerAdapter(getFragmentManager(),x));
 
         navigationTabStrip.setViewPager(viewPager);
