@@ -1,7 +1,6 @@
 package cn.levacr.is.is;
 
 import android.animation.Animator;
-import android.app.FragmentManager;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -10,8 +9,6 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
-
-import com.isnc.facesdk.SuperID;
 
 import cn.levacr.is.is.local.LocalFragment;
 import cn.levacr.is.is.pref.PrefFragment;
@@ -40,19 +37,37 @@ public class MainActivity extends AppCompatActivity {
             switch (menuItem.getItemId()) {
                 case R.id.setting:
                     turnToPrefrence();
+                    findViewById(R.id.close).setVisibility(View.VISIBLE);
+                    findViewById(R.id.setting).setVisibility(View.INVISIBLE);
+                    findViewById(R.id.close).setEnabled(true);
+                    findViewById(R.id.setting).setEnabled(false);
                     break;
                 case R.id.close:
+                    findViewById(R.id.setting).setVisibility(View.VISIBLE);
+                    findViewById(R.id.close).setVisibility(View.INVISIBLE);
+                    findViewById(R.id.setting).setEnabled(true);
+                    findViewById(R.id.close).setEnabled(false);
                     turnToHome();
                     break;
+                case R.id.sync:
+                    sync();
+                    break;
+
             }
             return true;
         }
     };
 
+    private void sync(){
+
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
 
         //设置actionbar
         Toolbar toolbar = (Toolbar) findViewById(R.id.toobar);
@@ -66,7 +81,6 @@ public class MainActivity extends AppCompatActivity {
             mPrefFragment = new PrefFragment();
         LocalFragment localFragment = new LocalFragment();
         ActivityUtils.UtilsV4.addFragmentToActivity(mFragmentManager, localFragment,R.id.main);
-
     }
 
     void turnToPrefrence (){
@@ -83,8 +97,9 @@ public class MainActivity extends AppCompatActivity {
         Animator animator =
                 ViewAnimationUtils.createCircularReveal(mPrefView, cx, cy, 0, finalRadius);
         animator.setInterpolator(new AccelerateDecelerateInterpolator());
-        animator.setDuration(500);
+        animator.setDuration(300);
         animator.start();
+
     }
     void turnToHome(){
 
@@ -97,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
         Animator animator =
                 ViewAnimationUtils.createCircularReveal(mPrefView, cx, cy, finalRadius, 0);
         animator.setInterpolator(new AccelerateDecelerateInterpolator());
-        animator.setDuration(500);
+        animator.setDuration(900);
         animator.start();
         animator.addListener(new Animator.AnimatorListener() {
             @Override

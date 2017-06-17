@@ -10,14 +10,12 @@ import android.widget.TextView;
 import java.util.List;
 
 import cn.levacr.is.is.R;
-import cn.levacr.is.is.data.Contract;
 
 /**
  * Created by hello on 2017/5/6.
  */
 
 public class ContractAdapter extends BaseAdapter {
-
     private List<Contract> mList;
     private Context mContext;
 
@@ -44,6 +42,7 @@ public class ContractAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         if (convertView == null) {
+
             ViewHolder viewHolder = new ViewHolder();
             LayoutInflater inflater = LayoutInflater.from(mContext);
             convertView = inflater.inflate(R.layout.item_contract, null);
@@ -59,4 +58,8 @@ public class ContractAdapter extends BaseAdapter {
         TextView name;
         TextView number;
     }
+
+
+
+
 }

@@ -33,6 +33,8 @@ public class LoginActivity extends Activity {
         SuperID.initFaceSDK(this);
         setContentView(R.layout.activity_login);
 
+
+
         faceBut = (Button) findViewById(R.id.faceLogin);
         loginBut = (Button) findViewById(R.id.login);
         username = (TextView) findViewById(R.id.username);

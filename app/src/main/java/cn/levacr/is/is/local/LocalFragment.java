@@ -1,13 +1,14 @@
 package cn.levacr.is.is.local;
 
 import android.app.Activity;
-import android.app.Instrumentation;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,8 +21,8 @@ import com.gigamole.library.navigationtabstrip.NavigationTabStrip;
 import java.util.ArrayList;
 import java.util.List;
 
-
 import cn.levacr.is.is.R;
+import cn.levacr.is.is.local.Doc.DocFragment;
 import cn.levacr.is.is.local.contract.ContractFragment;
 import cn.levacr.is.is.local.photo.PhotoFragment;
 import droidninja.filepicker.FilePickerBuilder;
@@ -35,6 +36,10 @@ import permissions.dispatcher.RuntimePermissions;
 @RuntimePermissions
 public class LocalFragment extends BaseFragment {
 
+
+    private PhotoFragment pf;
+    private DocFragment df;
+    private ContractFragment cf;
 
     private final int MAX_ATTACHMENT_COUNT = 10;
 
@@ -111,7 +116,31 @@ public class LocalFragment extends BaseFragment {
                 }
                 break;
         }
-        //// TODO: 2017/5/6 读取文件列表
+
+        if (docPaths.size() != 0 || photoPaths.size() != 0)
+            confirmEncr(photoPaths, docPaths);
+    }
+
+
+    //得到用户选择的加密方式
+    private void confirmEncr(final List photo, final List doc) {
+        new AlertDialog.Builder(this.getActivity()).setTitle("加密方式")
+                .setMessage("选择您需要的加密方式")
+                .setPositiveButton("真加密", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Encr.encrTruePhoto(photo);
+                        Encr.encrTrueDoc(doc);
+                        pf.addItem(photo);
+                    }
+                }).setNegativeButton("假加密", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Encr.encrFalseDoc(doc);
+                Encr.encrFalsePhoto(photo);
+                Log.e("test", "骗人的加密方式");
+            }
+        }).setNeutralButton("算了", null).show();
     }
 
     //初始化tab
@@ -128,18 +157,18 @@ public class LocalFragment extends BaseFragment {
                 navigationTabStrip.setActiveColor(R.color.colorPrimary);
             }
         } catch (Exception e) {
-            Log.v("asdfd", "asdfjksdalj");
         }
 
-
+        //设置viewpager
         List<Fragment> x = new ArrayList<>();
-        x.add(new PhotoFragment());
-        x.add(new PhotoFragment());
-        x.add(new ContractFragment());
+        pf = new PhotoFragment();
+        df = new DocFragment();
+        cf = new ContractFragment();
+        x.add(pf);
+        x.add(df);
+        x.add(cf);
         viewPager.setAdapter(new ViewPagerAdapter(getFragmentManager(), x));
 
         navigationTabStrip.setViewPager(viewPager);
     }
-
-
 }

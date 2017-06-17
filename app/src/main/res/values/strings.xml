@@ -1,8 +1,8 @@
 <resources>
     <string-array name="titles">
         <item>照片</item>
-        <item>联系人</item>
         <item>文档</item>
+        <item>联系人</item>
     </string-array>
 
     <string name="app_name">IS</string>
@@ -44,5 +44,6 @@
         <item>0</item>
         <item>1</item>
         <item>2</item>
-    </string-array>\
+    </string-array>
+    \
 </resources>
